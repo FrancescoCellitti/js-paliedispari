@@ -17,17 +17,18 @@ function contrario(word) {
 }
 const parola = prompt('inserire una parola')
 contrario(parola)
- 
 
 
 
-function pariDispari(numero, numeroPc) {
-    const sum = numero + numeroPc
+
+function pariDispari(numero, numeroPc, utentChoice) {
     if (numeroUtente > 5) {
         console.log('scelta del numero non conforme')
-    } else if (sum % 2 == 0 && utentChoice == 'pari') {
+    }
+    const sum = numero + numeroPc
+    if (sum % 2 == 0 && utentChoice == 'pari') {
         console.log('hai vinto')
-    } else if (sum % 2 != 0 && utentChoice == 'dispari') {
+    } else if (sum % 2 == 1 && utentChoice == 'dispari') {
         console.log('hai vinto')
     } else {
         console.log('hai perso')
@@ -39,6 +40,6 @@ function pariDispari(numero, numeroPc) {
 
 const numeroCasuale = Math.floor((Math.random() * 5) + 1)
 const numeroUtente = Number(prompt('scegli un numero tra 1 e 5'))
-const utentChoice = parseInt(prompt('scegli pari o dispari'))
+const utentChoice = prompt('scegli pari o dispari')
 console.log(numeroCasuale, numeroUtente);
 pariDispari(numeroUtente, numeroCasuale)
